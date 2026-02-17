@@ -6,7 +6,7 @@ import snowflake.connector
 @st.cache_resource
 def get_snowflake_connection():
     return snowflake.connector.connect(
-        account=st.secrets["snowflake"]["MWDVYOC-BS73011.snowflakecomputing.com"],
+        account=st.secrets["snowflake"]["MWDVYOC-BS73011"],
         user=st.secrets["snowflake"]["hemanthosi"],
         password=st.secrets["snowflake"]["Osi@Digital!@34"],
         warehouse=st.secrets["snowflake"]["COMPUTE_WH"],
@@ -60,3 +60,4 @@ with col5:
     st.line_chart(data.set_index("Month")["Profit"])
 
 st.success("Report generated successfully without using any Snowflake tables.")
+
